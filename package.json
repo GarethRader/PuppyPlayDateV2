@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev ",
+    "dev": "jest && next dev",
     "build": "next build",
     "start": "next start",
     "test": "jest",
@@ -11,7 +11,6 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.7",
-    "jest-environment-jsdom": "^28.1.0",
     "next": "12.1.6",
     "next-themes": "^0.2.0",
     "postcss": "^8.4.14",
@@ -24,6 +23,7 @@
     "@swc/core": "^1.2.197",
     "@swc/jest": "^0.2.21",
     "@testing-library/jest-dom": "^5.16.4",
+    "jest-environment-jsdom": "^28.1.0",
     "@testing-library/react": "^13.3.0",
     "@types/jest": "^27.5.1",
     "@types/node": "17.0.36",

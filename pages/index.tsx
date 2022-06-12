@@ -4,14 +4,13 @@ import Image from 'next/image'
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        test
-      </Head>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
+      <div className="bg-gradient-to-r from-indigo-500 to-red-50" >
 
+        <div className="text-3xl font-bold">
+          Puppy Playdate
+        </div>
+      </div>
+    </>
   )
 }
 
