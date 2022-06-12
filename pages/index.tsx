@@ -7,7 +7,7 @@ const Home: NextPage = () => {
       <div className="bg-gradient-to-r from-indigo-500 to-red-50" >
 
         <div className="text-3xl font-bold">
-          Puppy Playdate
+          Website title
         </div>
       </div>
     </>
