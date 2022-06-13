@@ -1,3 +1,64 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "next"
+  ],
+
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "overrides": [
+    {
+      "plugins": ["typescript-filenames"],
+      "files": 
+      ["*.ts", "*.tsx"],
+      "extends":[
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "parserOptions": {
+        "project": ["tsconfig.json"] // TODO: may need to find another way to find path
+      }
+    }
+  ],
+  "rules": {
+    "eqeqeq": "error",
+    "typescript-filenames/no-js-extension": 2,
+    "typescript-filenames/no-jsx-extension": 2,
+    "prettier/prettier": "error",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "arrow-spacing": ["error", { "before": true, "after": true }],
+    "semi": ["error","always"],
+    "no-multi-spaces": ["error"],
+
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "default",
+        "format": ["camelCase"]
+      },
+      {
+        "selector": "parameter",
+        "modifiers": ["destructured"],
+        "format" : ["PascalCase","camelCase"]
+      },
+      {
+        "selector": "variable", 
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      }
+    ]
+  },
+  //add other paths if needed
+  "ignorePatterns": ["node_modules",
+    "build",
+    "dist",
+    "public",
+    "__tests__",
+    "next.config.js"]
 }

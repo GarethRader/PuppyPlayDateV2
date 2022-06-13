@@ -1,0 +1,7 @@
+# Prettier artifacts
+build
+coverage
+
+.next
+out
+node_modules
