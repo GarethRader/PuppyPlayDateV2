@@ -10,7 +10,6 @@ export type TFieldTypes = {
 
 interface IForm {
   fields: TFieldTypes[];
-  // submitHandler: (e: React.FormEvent<HTMLInputElement>) => void;
   submitHandler: (e: React.FormEvent<HTMLFormElement>) => void;
   formType: string;
 }
