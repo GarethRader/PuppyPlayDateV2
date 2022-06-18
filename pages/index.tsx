@@ -1,13 +1,14 @@
 import type { NextPage } from "next";
 import React from "react";
 import Link from "next/link";
-import ArrowAnimation from "../components/arrowAnimation";
-import FormInput from "../components/formInput";
-// import Head from "next/head";
 import Image from "next/image";
+import ArrowAnimation from "../components/utils/arrowAnimation";
+import Login from "../components/auth/login";
+// import Head from "next/head";
+
+// TODO: use staticprops method from nextjs to retrieve static images
 import Hopia1 from "/public/static/img/Hopia1.jpg";
 import Hopia2 from "/public/static/img/Hopia2.jpg";
-import Hopia3 from "/public/static/img/Hopia3.jpg";
 const ArrowHandler = () => {
   // TODO: handle SVG arrow to move page
   console.log("move page");
@@ -15,12 +16,6 @@ const ArrowHandler = () => {
 };
 
 const Home: NextPage = () => {
-  const [CurrentDate, SetCurrentDate] = React.useState<Date | null>(null);
-  React.useEffect(() => {
-    const Today = new Date().toISOString().slice(0, 10);
-    SetCurrentDate(new Date(Today));
-  }, []);
-
   return (
     <div>
       <div className="flex flex-row overflow-hidden">
@@ -94,18 +89,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <div className="bg-gray-200 basis-5/12 h-screen">
-          <div className="flex justify-center items-center h-full">
-            MOCK PHOTO HERE
-            {/* <div className="bg-gray-500 rounded-full h-50 w-50 border-8 border-gray-500 hover:bg-green-200 hover:border-green-200">
-              <Image
-                src={Hopia3}
-                alt={"user image"}
-                className=" rounded-full h-50 w-50 object-cover"
-                width={350}
-                height={350}
-              />
-            </div> */}
-          </div>
+          <div className="flex justify-center items-center h-full">MOCK PHOTO HERE</div>
           {/* TODO: add mock profile picture here */}
         </div>
         <div className="bg-sky-400 basis-1/12 h-screen flex justify-center items-center hover:text-white active:text-yellow-500">
@@ -131,18 +115,16 @@ const Home: NextPage = () => {
         </div>
         <div className="basis-5/12 bg-sky-400">
           {/* TODO: insert mock photos here in place of circles  */}
-
           <div className="grid justify-center space-y-40 rotate-45 translate-y-6 translate-x-6">
             <div className="bg-gray-500 rounded-full h-50 w-50 border-8 border-gray-500 hover:bg-green-200 hover:border-green-200">
               <Image
                 src={Hopia2}
                 alt={""}
-                className="-rotate-45 rounded-full h-50 w-50 object-cover  "
+                className="-rotate-45 rounded-full h-50 w-50 object-cover"
                 width={500}
                 height={500}
               />
             </div>
-
             <div className="bg-gray-500 rounded-full h-50 w-50 border-8 border-gray-500 hover:bg-green-200 hover:border-green-200">
               <Image
                 src={Hopia1}
@@ -177,7 +159,9 @@ const Home: NextPage = () => {
         {/*Colors used in bg-split: bg-orange-100 bg-green-200 */}
         <div className="h-screen basis-2/4 bg-split-orange-green ">
           {/* TODO: form goes here */}
-          <FormInput />
+          <div className="flex justify-center">
+            <Login />
+          </div>
         </div>
         <div className="h-screen basis-1/4 bg-sky-400"></div>
       </div>

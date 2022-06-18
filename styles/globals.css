@@ -7,6 +7,10 @@ might change above tailwind imports to different file
 as of now this should be global???
 */
 
+.shadow {
+  box-shadow: 15px 15px 30px #666666, -15px -15px 30px #ffffff;
+}
+
 .circle {
   position: relative;
   width: 40vh;

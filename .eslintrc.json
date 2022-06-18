@@ -9,10 +9,11 @@
   "plugins": ["@typescript-eslint", "prettier"],
   "overrides": [
     {
-      "plugins": ["typescript-filenames"],
+      "plugins": ["typescript-filenames","prettier"],
       "files": 
       ["*.ts", "*.tsx"],
       "extends":[
+        "prettier",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking"
       ],
@@ -25,13 +26,13 @@
     "eqeqeq": "error",
     "typescript-filenames/no-js-extension": 2,
     "typescript-filenames/no-jsx-extension": 2,
-    "prettier/prettier": "error",
-    "@typescript-eslint/indent": ["error", 2],
+    "prettier/prettier":  ["error", { "endOfLine": "auto"}, { " usePrettierrc": true }],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "arrow-spacing": ["error", { "before": true, "after": true }],
     "semi": ["error","always"],
     "no-multi-spaces": ["error"],
+    "indent": [ "error", 2 ],
 
     "@typescript-eslint/naming-convention": [
       "error",
@@ -60,5 +61,7 @@
     "dist",
     "public",
     "__tests__",
-    "next.config.js"]
+    "next.config.js",
+    "tailwind.config.js",
+    "postcss.config.js"]
 }
