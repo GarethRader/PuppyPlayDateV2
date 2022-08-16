@@ -1,5 +1,5 @@
 {
-  "name": "puppyplaydatenext",
+  "name": "feruelophotos",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,7 +11,9 @@
     "format": "next lint --fix"
   },
   "dependencies": {
+    "@aws-amplify/ui-react": "^3.1.0",
     "autoprefixer": "^10.4.7",
+    "aws-amplify": "^4.3.27",
     "next": "12.1.6",
     "next-images": "^1.8.4",
     "next-themes": "^0.2.0",

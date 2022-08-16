@@ -1,49 +1,62 @@
 import React from "react";
-import FormInput, { TFieldTypes } from "../utils/formInput";
+
+type TFormValues = {
+  user: string;
+  password: string;
+};
 
 const Login = () => {
-  const HandleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [formValues, setFormValues] = React.useState<TFormValues>({ user: "", password: "" });
+
+  const onSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("username: ", UserName, "password: ", Password);
-    /*TODO: implement cognito auth here*/
+    console.log(formValues);
   };
 
-  const [UserName, SetUserName] = React.useState<string>("");
-  const [Password, SetPassword] = React.useState<string>("");
-  const LoginForm: TFieldTypes[] = [
-    {
-      name: "Username",
-      type: "text",
-      className: " border-2 border-gray-400 rounded-lg w-full",
-      handler: (e: React.ChangeEvent<HTMLInputElement>) => {
-        SetUserName(e.target.value);
-      }
-    },
-    {
-      name: "Password",
-      type: "password",
-      className: "border-2 border-gray-400 rounded-lg w-full",
-      handler: (e: React.ChangeEvent<HTMLInputElement>) => {
-        SetPassword(e.target.value);
-      }
-    },
-    {
-      name: "",
-      type: "submit",
-      className: "bg-sky-500 font-bold p-4 w-1/2 rounded hover:bg-sky-400 hover:text-white active:bg-cyan-600"
-    }
-  ];
   return (
-    <div className="w-2/4 justify-center items-center">
-      <div className="bg-white border-2 mt-20 border-green-200 rounded-3xl shadow ">
-        <FormInput fields={LoginForm} formType={"Log in"} submitHandler={(e) => HandleSubmit(e)} />
-
-        <div className="mb-10 p-5 text-center font-bold">
-          Unlike traditional dating apps, PuppyPlayDate<sup>tm</sup> isn't a dating app at all. You and your furry
-          friend(s) are our number one priority. Find a companion for your companion and sign up today.
-        </div>
+    <>
+      <div className="">
+        <div className="font-bold justify-center flex p-2">Feruelo Photos</div>
+        <form
+          className=""
+          onSubmit={(e) => {
+            onSubmitHandler(e);
+          }}
+        >
+          <div className="space-y-2">
+            <div className="hover:scale-105">
+              <input
+                type="text"
+                className="border-4 border-gray-700 rounded-lg p-1"
+                placeholder="username"
+                value={formValues.user}
+                onChange={(e) => {
+                  setFormValues({ ...formValues, user: e.target.value });
+                }}
+              />
+            </div>
+            <div className="hover:scale-105">
+              <input
+                type="password"
+                className="border-4 border-gray-700 rounded-lg p-1"
+                placeholder="password"
+                value={formValues.password}
+                onChange={(e) => {
+                  setFormValues({ ...formValues, password: e.target.value });
+                }}
+              />
+            </div>
+            <div className="hover:scale-105">
+              <input
+                type="submit"
+                value="Login"
+                className="bg-blue-400 font-bold p-2 rounded-lg w-full hover:bg-blue-500 active:bg-blue-600"
+              />
+            </div>
+          </div>
+        </form>
       </div>
-    </div>
+    </>
   );
 };
 

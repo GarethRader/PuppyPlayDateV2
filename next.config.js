@@ -1,14 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true
+  reactStrictMode: true,
+  
   // eslint:{
   //   dirs: ['pages'] //add directories if needed
   // }
 };
 
 module.exports = {
-  nextConfig
-
+  nextConfig,
+  images: {
+    domains: ['unsplash.it']
+  },
+  
   // IN CASE OF EMERGENCY
   // typescript: {
   //   ignoreBuildErrors:true,

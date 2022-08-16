@@ -7,9 +7,21 @@ might change above tailwind imports to different file
 as of now this should be global???
 */
 
+.zoom {
+  padding: 50px;
+  transition: transform .2s; /* Animation */
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+.zoom:hover {
+  transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 .shadow {
   box-shadow: 15px 15px 30px #666666, -15px -15px 30px #ffffff;
 }
+
 
 .circle {
   position: relative;
@@ -21,6 +33,13 @@ as of now this should be global???
   background-size: cover;
   background-position: center;
   box-shadow: 0px 18px 53px 0px rgba(0, 0, 0, 0.3);
+}
+
+.softshadow {
+  border-radius: 56px;
+background: linear-gradient(145deg, #ffffff, #e6e6e6);
+box-shadow:  41px 41px 82px #ededed,
+             -41px -41px 82px #ffffff;
 }
 
 .semicircle-top {
@@ -73,7 +92,7 @@ as of now this should be global???
 }
 
 .card {
-  display: grid;
+  display: gridCard;
   grid-template-columns: 300px;
   grid-template-rows: 210px 250px 20px;
   grid-template-areas: "image" "text" "stats";
@@ -247,7 +266,7 @@ a {
     monospace;
 }
 
-.grid {
+.gridCard {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,7 +310,7 @@ a {
 }
 
 @media (max-width: 600px) {
-  .grid {
+  .gridCard{
     width: 100%;
     flex-direction: column;
   }
